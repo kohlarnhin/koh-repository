@@ -29,6 +29,7 @@
         <httpmime.version>4.5</httpmime.version>
         <redisson.version>3.16.6</redisson.version>
         <github.global.server>github</github.global.server>
+        <altDeploymentRepository>/Users/kohlarnhin/Software/maven/localRepository</altDeploymentRepository>
     </properties>
 
     <modules>
@@ -137,6 +138,7 @@
         </dependencies>
     </dependencyManagement>
 
+
     <build>
         <plugins>
             <!--1.作用：将jar deploy(发布)到本地储存库位置(altDeploymentRepository)-->
@@ -144,7 +146,7 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.1</version>
                 <configuration>
-                    <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
+                    <altDeploymentRepository>internal.repo::default::file://${altDeploymentRepository}</altDeploymentRepository>
                 </configuration>
             </plugin>
             <!--2.作用：将本地存储库位置的jar文件发布到github上-->
@@ -156,7 +158,7 @@
                     <message >Maven artifacts for ${project.version}</message>
                     <noJekyll>true</noJekyll>
                     <!--本地jar相关文件地址，与上方配置储存库位置(altDeploymentRepository)保持一致-->
-                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                    <outputDirectory>${altDeploymentRepository}</outputDirectory>
                     <!--配置上传到github哪个分支，此处配置格式必须以refs/heads/+分支名称-->
                     <branch>refs/heads/main</branch>
                     <merge>true</merge>
