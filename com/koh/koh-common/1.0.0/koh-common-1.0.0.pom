@@ -23,7 +23,7 @@
         <spring.cloud.version>2021.0.1</spring.cloud.version>
         <alibaba.cloud>2021.0.1.0</alibaba.cloud>
         <boot.version>2.6.3</boot.version>
-        <cfc.common.core.version>1.0.0</cfc.common.core.version>
+        <koh.common.core.version>1.0.0</koh.common.core.version>
         <jwt.version>0.9.1</jwt.version>
         <httpclient.version>4.5</httpclient.version>
         <httpmime.version>4.5</httpmime.version>
@@ -111,9 +111,9 @@
             </dependency>
 
             <dependency>
-                <groupId>com.cfc.common.core</groupId>
-                <artifactId>cfc-common-core</artifactId>
-                <version>${cfc.common.core.version}</version>
+                <groupId>com.koh.common.core</groupId>
+                <artifactId>koh-common-core</artifactId>
+                <version>${koh.common.core.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>
